@@ -9,8 +9,6 @@ screen = pygame.display.set_mode((Screen_Width, Screen_Height))
 
 player = pygame.Rect((300,250,50,50))
 
-
-
 def main():
     run = True
     FPS = 60
