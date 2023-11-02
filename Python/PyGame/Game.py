@@ -19,7 +19,7 @@ BLACK = (0, 0, 0)
 animation_list = []
 animation_steps = 4
 last_update = pygame.time.get_ticks()
-animation_cooldown = 100
+animation_cooldown = 200
 frame = 0
 
 
@@ -38,17 +38,16 @@ while run:
          last_update = current_time
          if frame >= len(animation_list):
               frame = 0
-         
 
     #show frame image
 
     screen.blit(animation_list[frame], (0, 0))
+    pygame.display.update()
 
 	#event handler
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
                 run = False
 
-        pygame.display.update()
 
 pygame.quit()
