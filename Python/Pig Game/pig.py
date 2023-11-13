@@ -34,16 +34,20 @@ def holdAt20orGoal(limit = 20, score = 0):
         print("Roll:", roll)
         if roll == 1:
             turnTotal = 0
+            print("Turn Total: ", turnTotal)
             break
         else:
             turnTotal += roll
     newScore = score + turnTotal
+    print("Turn Total: ", turnTotal)
     print("New score: ", newScore)
     
     
     return newScore
+#score = int(input("Score?: "))
 
-print(holdAt20orGoal(20,90))
+#print(holdAt20orGoal(20,score))
+
 
 #limit = int(input("What is the limit for the hold at x game?: "))
 #trials = int(input("How many trials?: "))
@@ -57,9 +61,34 @@ def holdAtXOutcomes(limit, trials):
         score = holdat20(limit)
         results[turnTotal] += 1
     return results
-
-
 #results = holdAtXOutcomes(limit, trials)
 #print("Score\tEstimated Probability")
 #for score in results:
 #    print(score, results[score]/trials,sep = '\t')
+
+
+def avgPigTurns(games):
+    totalTurns = 0
+    for _ in range(games):
+        turnTotal = 0
+        newScore = 0
+        turns = 0
+        while newScore < 100:
+                while turnTotal < 20:
+                    roll = random.randrange(1, 6)
+                    if roll == 1:
+                        turnTotal = 0
+                        break
+                    else:
+                        turnTotal += roll
+
+                newScore += turnTotal
+                turns += 1
+                turnTotal = 0
+
+        totalTurns += turns
+
+    return totalTurns / games
+games = int(input("Games? "))
+print("Average Turns: ", avgPigTurns(games))
+
