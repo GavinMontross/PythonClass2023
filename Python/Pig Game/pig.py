@@ -216,7 +216,9 @@ def main():
         print("Score\tEstimated Probability")
         for score in results:
             print(score, results[score]/trials,sep = '\t')
-
+    elif whichfunc == 4:
+        score = int(input("Score?: "))
+        print(holdAt20orGoalTurn(20, score))
     
         
 
