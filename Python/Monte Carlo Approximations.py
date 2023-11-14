@@ -45,7 +45,7 @@ for _ in range(TRIALS):
 print(higherThanZero/TRIALS)
 """
 
-
+"""
 def coinFlip():
     coin = ['H','T']
     flip = random.choice(coin)
@@ -79,3 +79,5 @@ for _ in range(TRIALS):
         player2total += 1
 print("player1's win %:", player1total/TRIALS)
 print("player2's win %:", player2total/TRIALS)
+"""
+

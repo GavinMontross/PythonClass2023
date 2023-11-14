@@ -18,15 +18,27 @@ def holdat20(limit=20):
     print("Turn total:",turntotal)
     return turntotal
 
+def holdat20noprint(limit = 20):
+    turntotal = 0
+    while turntotal < limit:
+        roll = rolld6()
+        if roll != 1:
+            turntotal += roll
+        if roll == 1:
+            turntotal = 0
+            break
+    return turntotal
+
 def holdAt20Outcomes(trials):
     results = {0:0,20:0,21:0,22:0,23:0,24:0,25:0}
     for _ in range(trials):
-        turnTotal = holdat20()
+        turnTotal = holdat20noprint()
         results[turnTotal] += 1
     for score in results:
         results[score] = results[score]/trials
     return results
-print(holdAt20Outcomes(1000))
+
+
 def holdAt20orGoalTurn(limit = 20, score = 0):
     turnTotal = 0
     while turnTotal < limit:
@@ -192,19 +204,22 @@ def main():
     if whichfunc == 1:
         print(holdat20())
     elif whichfunc == 2:
-        trials = input("How many trials?: ")
-        print(holdAt20Outcomes(trials))
-    elif whichfunc == 3:
-        limit = int(input("What is the limit for the hold at x game?: "))
-        xtrials = int(input("How many trials?: "))
-        results = holdAtXOutcomes(limit, xtrials)
+        trials = int(input("How many trials?: "))
+        results = (holdAt20Outcomes(trials))
         print("Score\tEstimated Probability")
         for score in results:
-            print(score, results[score]/xtrials,sep = '\t')
+            print(score, results[score]/trials,sep = '\t')
+    elif whichfunc == 3:
+        limit = int(input("What is the limit for the hold at x game?: "))
+        trials = int(input("How many trials?: "))
+        results = holdAtXOutcomes(limit, trials)
+        print("Score\tEstimated Probability")
+        for score in results:
+            print(score, results[score]/trials,sep = '\t')
 
     
         
 
 
 
-#main()
+main()
