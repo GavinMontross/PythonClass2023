@@ -3,7 +3,6 @@ def rolld6():
     roll = random.randint(1,6)
     return roll
 
-
 def holdat20(limit=20):
     turntotal = 0
     while turntotal < limit:
@@ -34,10 +33,11 @@ def holdAt20Outcomes(trials):
     for _ in range(trials):
         turnTotal = holdat20noprint()
         results[turnTotal] += 1
-    for score in results:
-        results[score] = results[score]/trials
-    return results
 
+    print("Score\tEstimated Probability")
+    for score in results:
+        print(score, results[score]/trials,sep = '\t')
+    return results
 
 def holdAt20orGoalTurn(limit = 20, score = 0):
     turnTotal = 0
@@ -54,9 +54,6 @@ def holdAt20orGoalTurn(limit = 20, score = 0):
     print("New score: ", newScore)
     
     return newScore
-#score = int(input("Score?: "))
-
-#print(holdAt20orGoal(20,score))
 
 def holdAt20orGoalGame():
     newScore = 0
@@ -75,18 +72,13 @@ def holdAt20orGoalGame():
         print("Turn Total: ", turnTotal)
         print("New score: ", newScore)
 
-#print(holdAt20orGoalGame())
-
-#limit = int(input("What is the limit for the hold at x game?: "))
-#trials = int(input("How many trials?: "))
-
 def holdAtXOutcomes(limit, trials):
     results = {0:0}
     for score in range(limit, limit + 6):
         results[score] = 0
     for _ in range(trials):
-        turnTotal = holdat20(limit=limit)
-        score = holdat20(limit)
+        turnTotal = holdat20noprint(limit=limit)
+        score = holdat20noprint(limit)
         results[turnTotal] += 1
     return results
 
@@ -109,10 +101,6 @@ def avgPigTurns(games):
         total_turns += turns
     return total_turns/games
     
-
-#games = int(input("Games?: "))
-#print("Average Turns: ", avgPigTurns(games))
-
 def twoPlayer():
     playerOneScore = 0
     playerTwoScore = 0
@@ -143,9 +131,6 @@ def twoPlayer():
         elif playerOneTurn == False:
             playerTwoScore += turnTotal
             print("New Score: ", playerTwoScore)
-
-#twoPlayer()
-
 
 def pigGame1v1():
     playerOneScore = 0
@@ -197,18 +182,13 @@ def pigGame1v1():
             playerTwoScore += turnTotal
             print("New Score: ", playerTwoScore)
 
-#pigGame1v1()
-
 def main():
-    whichfunc = int(input("Which function(1-8)"))
+    whichfunc = int(input("Which function (1-8): "))
     if whichfunc == 1:
         print(holdat20())
     elif whichfunc == 2:
         trials = int(input("How many trials?: "))
-        results = (holdAt20Outcomes(trials))
-        print("Score\tEstimated Probability")
-        for score in results:
-            print(score, results[score]/trials,sep = '\t')
+        holdAt20Outcomes(trials)
     elif whichfunc == 3:
         limit = int(input("What is the limit for the hold at x game?: "))
         trials = int(input("How many trials?: "))
@@ -217,11 +197,15 @@ def main():
         for score in results:
             print(score, results[score]/trials,sep = '\t')
     elif whichfunc == 4:
-        score = int(input("Score?: "))
+        score = int(input("Initial score?: "))
         print(holdAt20orGoalTurn(20, score))
-    
-        
-
-
-
+    elif whichfunc == 5:
+        holdAt20orGoalGame()
+    elif whichfunc == 6:
+        games = int(input("How many games?: "))
+        print("Average turns: " , avgPigTurns(games))
+    elif whichfunc == 7:
+        twoPlayer()
+    elif whichfunc == 8:
+        pigGame1v1()
 main()
