@@ -131,3 +131,9 @@ def mostCommonLetter(text):
             highestCount = d[letter]
             answer = letter
     return answer
+
+def isEverywhere(nums, val):
+    for i in range(len(nums) - 1):
+        if nums[i] != val and nums[i + 1] != val:
+            return False
+    return True
