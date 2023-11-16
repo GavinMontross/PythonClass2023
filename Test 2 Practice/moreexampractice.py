@@ -123,11 +123,3 @@ def percentCalc():
     for double in results:
         print(double, results[double]/trials,sep = '\t'*3)
 
-def mostCommon(word):
-    letters = {}
-    for c in word:
-        if c not in letters:
-            letters[c] = 0
-        letters[c] += 1
-    return max(letters)
-print(mostCommon('aaabdcgoejtaaa'))    

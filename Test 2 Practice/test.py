@@ -50,7 +50,6 @@ def nonFoodSum(file):
         if typelst[index] != "Food":
             sum += pricelst[index]
     return sum
-print(nonFoodSum('Test 2 Practice\prices.csv'))
 
 def coinFlip():
     coin = ["H", "T"]

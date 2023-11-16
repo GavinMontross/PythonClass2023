@@ -1,10 +1,11 @@
 import random
 
+#Flipped the coin using random choice
 def coinFlip():
     coin = ["H", "T"]
     flip = random.choice(coin)
     return flip
-
+#Simulated ten flips using for loop, stored the outcome in fliplst, and determined who won by comparing the count of T's and H's in the list
 def tenFlips():
     fliplst = []
     Tcount = 0
@@ -21,6 +22,7 @@ def tenFlips():
         playerWin = True
     return playerWin
 
+#Simulated 100000 games, counted wins for player and Rosen, and then calculated percentage.
 def gameSim(trials):
     playerWins = 0
     RosenWins = 0

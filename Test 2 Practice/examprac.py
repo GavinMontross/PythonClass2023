@@ -45,4 +45,3 @@ def sumStringDigits(word):
             c = int(c)
             total += c
     return total
-print(sumStringDigits('ab12cd34das'))
