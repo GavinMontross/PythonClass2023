@@ -1,5 +1,5 @@
 import random
-"""
+
 def sevenCardGame():
     cards = ["b"] * 5 + ["r"] *2
     random.shuffle(cards)
@@ -17,7 +17,7 @@ for _ in range(TRIALS):
     if result:
         wins += 1
 print(wins/TRIALS)
-"""
+
 
 
 """
