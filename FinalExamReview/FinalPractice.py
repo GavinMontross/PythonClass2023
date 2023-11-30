@@ -15,7 +15,10 @@ def findHighestScore(file):
 def removeEmails(inputName, outputName):
     data = open(inputName,'r')
     text = data.read()
-    
+    pattern = "."
+    outText = re.sub(pattern, "at", text)
     out = open(outputName, 'w')
+    out.write(outText)
     out.close()
-    
+
+removeEmails("FinalExamReview/emailtext.txt", "test.txt")
