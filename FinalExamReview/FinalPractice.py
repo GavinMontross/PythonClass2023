@@ -1,3 +1,5 @@
+import re
+
 def findHighestScore(file):
     data = open(file, 'r')
     numList = []
@@ -8,4 +10,12 @@ def findHighestScore(file):
         nameList.append(values[0])
     nameIndex = numList.index(max(numList))
     return nameList[nameIndex] + " had a score of" + max(numList)
-print(findHighestScore("FinalExamReview/marioscores.csv"))
+#print(findHighestScore("FinalExamReview/marioscores.csv"))
+
+def removeEmails(inputName, outputName):
+    data = open(inputName,'r')
+    text = data.read()
+    
+    out = open(outputName, 'w')
+    out.close()
+    

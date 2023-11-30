@@ -1,0 +1,5 @@
+print("Sergey Brin is a computer scientist graduate from the University of Maryland.")
+print("He is best known for co-founding Google with Larry Page.")
+print("He was president of Google's parent company: Alphabet.inc")
+input("Have you heard of Sergey Brin before?")
+print("They're pretty cool aren't they.")
