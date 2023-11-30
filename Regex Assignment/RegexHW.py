@@ -19,4 +19,13 @@ answer = re.findall(pattern, text)
 #print (len(answer))
 
 #Question 4
-ingPattern = 
+ingPattern = "\\b(\w+ing)\\b"
+ionPattern = "\\b(\w+ion)\\b"
+ingTotal = re.findall(ingPattern, text)
+ionTotal = re.findall(ionPattern, text)
+if len(ingTotal) > len(ionTotal):
+    print("There are more words ending in ing")
+else:
+    print("There are more words ending in ion")
+
+#Questionm 5
