@@ -10,12 +10,12 @@ def findHighestScore(file):
         nameList.append(values[0])
     nameIndex = numList.index(max(numList))
     return nameList[nameIndex] + " had a score of" + max(numList)
-#print(findHighestScore("FinalExamReview/marioscores.csv"))
+print(findHighestScore("FinalExamReview/marioscores.csv"))
 
 def removeEmails(inputName, outputName):
     data = open(inputName,'r')
     text = data.read()
-    pattern = "tu[a-z]\d{5}@temple.edu"
+    pattern = "tu[a-z]\d{5}@temple\.edu"
     outText = re.sub(pattern, "REDACTED", text)
     out = open(outputName, 'w')
     out.write(outText)
