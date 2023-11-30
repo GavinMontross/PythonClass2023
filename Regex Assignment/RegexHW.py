@@ -4,18 +4,18 @@ file = open("Regex Assignment\words.txt" , "r")
 text = file.read()
 
 #Question 1
-pattern = "\w*cat\w*|\w*dog\w*"
-answer = re.findall(pattern, text)
+catDogPattern = "\w*cat\w*|\w*dog\w*"
+answer = re.findall(catDogPattern, text)
 #print (len(answer))
 
 #Question 2
-pattern = "\\b\\w{4}\\b"
-answer = re.findall(pattern, text)
+fourPattern = "\\b\\w{4}\\b"
+answer = re.findall(fourPattern, text)
 #print(len(answer))
 
 #Question 3
-pattern = "\w*hun\w*"
-answer = re.findall(pattern, text)
+hunPattern = "\w*hun\w*"
+answer = re.findall(hunPattern, text)
 #print (len(answer))
 
 #Question 4
