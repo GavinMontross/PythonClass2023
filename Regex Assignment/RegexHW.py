@@ -1,10 +1,10 @@
 import re
 
-file = open("Regex Assignment\words.txt" , "r")
+file = open("Regex Assignment/words.txt" , "r")
 text = file.read()
 
 #Question 1
-catDogPattern = "\w*cat\w*|\w*dog\w*"
+catDogPattern = "\\w*cat\\w*|\\w*dog\\w*"
 answer = re.findall(catDogPattern, text)
 #print (len(answer))
 
@@ -14,13 +14,13 @@ answer = re.findall(fourPattern, text)
 #print(len(answer))
 
 #Question 3
-hunPattern = "\w*hun\w*"
+hunPattern = "\\w*hun\\w*"
 answer = re.findall(hunPattern, text)
 #print (len(answer))
 
 #Question 4
-ingPattern = "\\b(\w+ing)\\b"
-ionPattern = "\\b(\w+ion)\\b"
+ingPattern = "\\b(\\w+ing)\\b"
+ionPattern = "\\b(\\w+ion)\\b"
 ingTotal = re.findall(ingPattern, text)
 ionTotal = re.findall(ionPattern, text)
 if len(ingTotal) > len(ionTotal):
@@ -28,4 +28,4 @@ if len(ingTotal) > len(ionTotal):
 else:
     print("There are more words ending in ion")
 
-#Questionm 5
+#Question 5
