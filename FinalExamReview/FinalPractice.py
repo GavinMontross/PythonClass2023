@@ -33,7 +33,7 @@ def makeUsername(name, n):
     for letter in range(len(firstletters)):
         result += firstletters[letter]
     return result + str(n)
-#print(makeUsername("Gavin Samuel Montross", 429))
+#print(makeUsername("Emilee Elizabeth Maryasz", 700))
 
 def XOR(a,b):
     if (a == True and b == False) or (b == True and a == False):
